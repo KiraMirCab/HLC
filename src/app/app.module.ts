@@ -1,14 +1,22 @@
+import { AppRoutingModule } from './app-routing.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
+import { InicioComponent } from './pages/inicio/inicio.component';
+import { NoticiasComponent } from './pages/noticias/noticias.component';
+import { SugerenciasComponent } from './pages/sugerencias/sugerencias.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    InicioComponent,
+    NoticiasComponent,
+    SugerenciasComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
