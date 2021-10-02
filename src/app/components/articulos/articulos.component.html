@@ -1,4 +1,4 @@
-<table class="table">
+<!--<table class="table">
     <thead>
       <tr>
         <th scope="col">#</th>
@@ -22,17 +22,23 @@
         </td>
       </tr>
     </tbody>
-  </table>
+  </table>-->
 
-  <div *ngFor="let articulo of articulos; let i=index"class="card" style="width: 18rem;">
-    <img *ngIf="!articulo.img" class="card-img-top" src="../../assets/Images/Default.svg" alt="Card image cap">
-    <img *ngIf="articulo.descuento" class="card-img-top" src="{{articulo.img}}" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">{{articulo.nombre}}</h5>
-      <p class="card-text">{{articulo.descripcion}}</p>
-      <p class="card-text" *ngIf="!articulo.descuento">{{articulo.precio}} €</p>
-      <p class="card-text" *ngIf="articulo.descuento">{{calculaPrecio(articulo.precio)}} €</p>
-      <button *ngIf="!articulo.descuento" type="button" class="btn btn-primary" (click)="pulsaBoton(i)">Aplicar descuento</button>
-      <button *ngIf="articulo.descuento" type="button" class="btn btn-warning" (click)="pulsaBoton(i)">Quitar descuento</button>
+  <div class="container">
+    <div class="row">
+      <div *ngFor="let articulo of articulos; let i=index"class="card text-center col-sm-6" style="width: 16rem;">
+        <img *ngIf="!articulo.img" class="card-img-top" src="../../assets/Images/Default.png" alt="Card image cap">
+        <img *ngIf="articulo.img" class="card-img-top" src="{{articulo.img}}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{articulo.nombre}}</h5>
+          <p class="card-text">{{articulo.descripcion}}</p>
+          <div class="card-footer">
+            <p class="card-text" *ngIf="!articulo.descuento">{{articulo.precio}} €</p>
+            <p class="card-text" *ngIf="articulo.descuento">{{calculaPrecio(articulo.precio)}} €</p>
+            <button *ngIf="!articulo.descuento" type="button" class="btn btn-primary" (click)="pulsaBoton(i)">Aplicar descuento</button>
+            <button *ngIf="articulo.descuento" type="button" class="btn btn-warning" (click)="pulsaBoton(i)">Quitar descuento</button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
