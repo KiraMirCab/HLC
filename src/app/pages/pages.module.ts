@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { InicioComponent } from './inicio/inicio.component';
 import { NoticiasComponent } from './noticias/noticias.component';
 import { SugerenciasComponent } from './sugerencias/sugerencias.component';
-import { ArticulosComponent } from '../components/articulos/articulos.component';
+import { ArticulosComponent } from '../pages/articulos/articulos.component';
 
 
 

@@ -4,7 +4,7 @@ import { InicioComponent } from './pages/inicio/inicio.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { ArticulosComponent } from './components/articulos/articulos.component';
+import { ArticulosComponent } from './pages/articulos/articulos.component';
 
 
 const rutas:Routes = [
