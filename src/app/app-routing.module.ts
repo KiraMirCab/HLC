@@ -14,15 +14,15 @@ const rutas:Routes = [
   },
   {
     path:"noticias",
-    component: NoticiasComponent
+    loadChildren: ()=> import('./pages/noticias/noticias.module').then(m=>m.NoticiasModule)
   },
   {
     path:"articulos",
-    component: ArticulosComponent
+    loadChildren: ()=> import('./pages/articulos/articulos.module').then(m=>m.ArticulosModule)
   },
   {
     path:"sugerencias",
-    component: SugerenciasComponent
+    loadChildren: ()=> import('./pages/sugerencias/sugerencias.module').then(m=>m.SugerenciasModule)
   },
   {
     path:"**",

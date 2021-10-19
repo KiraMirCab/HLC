@@ -42,13 +42,13 @@ export class ArticulosComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  pulsaBoton(indice:number) {
+  /*pulsaBoton(indice:number) {
 
     this.articulos[indice].descuento = ! this.articulos[indice].descuento
   }
 
   calculaPrecio(n:number):number {
     return Math.round(80 * n) / 100;
-  }
+  }*/
 
 }

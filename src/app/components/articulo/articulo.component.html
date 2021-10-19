@@ -1,0 +1,14 @@
+    <img *ngIf="!articulo.img" class="card-img-top" src="../../assets/Images/Default.png" alt="Card image cap">
+    <img *ngIf="articulo.img" class="card-img-top" src="{{articulo.img}}" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{articulo.nombre}}</h5>
+      <p class="card-text">{{articulo.descripcion}}</p>
+      <div class="card-footer">
+        <p class="card-text" *ngIf="!articulo.descuento">{{articulo.precio}} €</p>
+        <p class="card-text" *ngIf="articulo.descuento">{{calculaPrecio(articulo.precio)}} €</p>
+        <button *ngIf="!articulo.descuento" type="button" class="btn btn-primary" (click)="pulsaBoton()">Aplicar descuento</button>
+        <button *ngIf="articulo.descuento" type="button" class="btn btn-warning" (click)="pulsaBoton()">Quitar descuento</button>
+        <button type="button" class="btn btn-warning" (click)="pulsaBotonComprar()">Comprar</button>
+
+      </div>
+    </div>

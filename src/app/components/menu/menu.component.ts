@@ -1,5 +1,8 @@
+import { Article } from './../../interfaces/article';
 import { Component, OnInit } from '@angular/core';
+import { ArticuloService } from 'src/app/servicios/articulo.service';
 import { MenuItem } from '../../interfaces/menu-item';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-menu',
@@ -7,6 +10,8 @@ import { MenuItem } from '../../interfaces/menu-item';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
+  public miSubscripcion:Subscription;
+  public comprados:number = 0;
 
   public items:MenuItem[] = [
     {
@@ -25,10 +30,27 @@ export class MenuComponent implements OnInit {
       ruta: 'sugerencias',
       texto: 'Sugerencias'
     }
-  ]
-  constructor() { }
+  ];
 
-  ngOnInit(): void {
+  constructor(private _articuloService:ArticuloService) { }
+
+  getTexto(indice:number){
+    let cadenaComprados = this.comprados ===0 ? '' : ' (Comprados : ' + this.comprados +')';
+    if(indice == 2){
+      return this.items[indice].texto + cadenaComprados;;
+    }
+    return this.items[indice].texto;
   }
 
+  ngOnInit(): void {
+    this.miSubscripcion = this._articuloService.emiteCompraArticulo.subscribe((data:Article)=>{
+      this.comprados++;
+      console.log(data.nombre + ' comprado');
+    })
+  }
+
+  ngOnDestroy():void{
+    this.miSubscripcion.unsubscribe();
+    console.log('Eliminamos la subscripción');
+  }
 }

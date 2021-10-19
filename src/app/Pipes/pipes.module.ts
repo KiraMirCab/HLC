@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { InicioComponent } from './inicio/inicio.component';
+import { MiFechaPipe } from './miFecha/mi-fecha.pipe';
 
 
 
 @NgModule({
   declarations: [
-    InicioComponent
+    MiFechaPipe
   ],
   imports: [
     CommonModule
   ],
-  exports: [
-    InicioComponent
+  exports:[
+    MiFechaPipe
   ]
 })
-export class PagesModule { }
+export class PipesModule { }

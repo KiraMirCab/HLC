@@ -1,44 +1,5 @@
-<!--<table class="table">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Nombre articulo</th>
-        <th scope="col">Precio</th>
-        <th scope="col">Precio con descuento</th>
-        <th scope="col">Descuento 20%</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let articulo of articulos; let i=index">
-        <th scope="row">{{i+1}}</th>
-        <td>{{articulo.nombre}}</td>
-        <td>{{articulo.precio}} €</td>
-        <td *ngIf="articulo.descuento">{{calculaPrecio(articulo.precio)}} €</td>
-        <td *ngIf="!articulo.descuento">  </td>
-        <td>
-            <button *ngIf="!articulo.descuento" type="button" class="btn btn-primary" (click)="pulsaBoton(i)">Aplicar</button>
-            <button *ngIf="articulo.descuento" type="button" class="btn btn-warning" (click)="pulsaBoton(i)">Quitar</button>
-
-        </td>
-      </tr>
-    </tbody>
-  </table>-->
-
   <div class="container">
     <div class="row">
-      <div *ngFor="let articulo of articulos; let i=index"class="card text-center col-sm-6" style="width: 16rem;">
-        <img *ngIf="!articulo.img" class="card-img-top" src="../../assets/Images/Default.png" alt="Card image cap">
-        <img *ngIf="articulo.img" class="card-img-top" src="{{articulo.img}}" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">{{articulo.nombre}}</h5>
-          <p class="card-text">{{articulo.descripcion}}</p>
-          <div class="card-footer">
-            <p class="card-text" *ngIf="!articulo.descuento">{{articulo.precio}} €</p>
-            <p class="card-text" *ngIf="articulo.descuento">{{calculaPrecio(articulo.precio)}} €</p>
-            <button *ngIf="!articulo.descuento" type="button" class="btn btn-primary" (click)="pulsaBoton(i)">Aplicar descuento</button>
-            <button *ngIf="articulo.descuento" type="button" class="btn btn-warning" (click)="pulsaBoton(i)">Quitar descuento</button>
-          </div>
-        </div>
-      </div>
+      <app-articulo *ngFor="let articulo of articulos" class="card text-center col-sm-6"></app-articulo>
     </div>
   </div>
