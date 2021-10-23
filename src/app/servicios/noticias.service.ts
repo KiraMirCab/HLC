@@ -11,7 +11,7 @@ export class NoticiasService {
 
   getNoticias() {
     return new Promise<Respuesta>((resolve, reject) => {
-      const url = 'https://newsapi.org/v2/everything?q=tesla&from=2021-09-15&sortBy=publishedAt&apiKey=bacaa389873647768efcc5a594f34c17'
+      const url = 'https://newsapi.org/v2/everything?q=España&from=2021-10-23&sortBy=popularity&apiKey=bacaa389873647768efcc5a594f34c17'
       this._http.get<Respuesta>(url).subscribe(respuesta=>{
         resolve(respuesta);
       }, err=>{

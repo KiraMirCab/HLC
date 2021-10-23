@@ -1,7 +1,7 @@
 <ul class="list-group">
-    <li class="list-group-item" *ngFor="let item of items">
+    <li class="list-group-item" *ngFor="let item of items; let i=index">
         <a [routerLink]="item.ruta">
-            {{item.texto}}
+            {{getTexto(i)}}
         </a>
     </li>
 </ul>

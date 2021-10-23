@@ -9,7 +9,10 @@
     <div class="row">
         <br>
         <div *ngFor="let n of noticias" class= "col col-lg-4 col-sm-6 col-xs-12">
-            <app-noticia [noticia]="n" (emiteGuardaAutor)="guardaAutorEnFavoritos($event)"></app-noticia>
+            <app-noticia 
+            [noticia]="n" 
+            (emiteGuardaAutor)="guardaAutorEnFavoritos($event)"
+            ></app-noticia>
         </div>
     </div>
 </div>

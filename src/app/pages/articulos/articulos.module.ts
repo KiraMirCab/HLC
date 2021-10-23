@@ -1,3 +1,4 @@
+import { ArticulosComponent } from './articulos.component';
 import { ComponentsModule } from './../../components/components.module';
 
 import { NgModule } from '@angular/core';
@@ -7,7 +8,7 @@ import { ArticulosRoutingModule } from './articulos-routing.module';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [ArticulosComponent],
   imports: [
     CommonModule,
     ArticulosRoutingModule,

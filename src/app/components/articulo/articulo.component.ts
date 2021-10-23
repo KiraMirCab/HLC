@@ -9,7 +9,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ArticuloComponent implements OnInit {
 
-  @Input() articulo:Article;
+  @Input() articulo: Article;
 
   constructor(private _articuloService:ArticuloService) { }
 

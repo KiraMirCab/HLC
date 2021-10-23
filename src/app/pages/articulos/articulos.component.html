@@ -1,5 +1,8 @@
   <div class="container">
     <div class="row">
-      <app-articulo *ngFor="let articulo of articulos" class="card text-center col-sm-6"></app-articulo>
+      <br>
+      <div *ngFor="let a of articulos" class="col text-center col-sm-6">
+        <app-articulo [articulo]="a" ></app-articulo>
+      </div>
     </div>
   </div>
